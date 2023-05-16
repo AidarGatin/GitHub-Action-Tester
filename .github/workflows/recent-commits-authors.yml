@@ -16,6 +16,7 @@ jobs:
         uses: AidarGatin/github-recent-commits-authors@v1.3
         id: recent-commits
         with:
+          github_repository: ${{ github.repository }}
           github_token: ${{ secrets.GH_TOKEN }}
           days_before: '7' 
           output_format: 'raw' 
