@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get Recent Commit Authors
-        uses: marketplace-actions/github-recent-commits-authors@v1
+        uses: AidarGatin/github-recent-commits-authors@v1
         id: recent-commits
         with:
           github-token: ${{ secrets.GH_TOKEN }}
