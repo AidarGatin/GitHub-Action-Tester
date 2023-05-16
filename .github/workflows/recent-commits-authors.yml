@@ -16,9 +16,9 @@ jobs:
         uses: AidarGatin/github-recent-commits-authors@v1.1
         id: recent-commits
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          days-before: '7' 
-          output-format: 'raw' 
+          github_token: ${{ secrets.GH_TOKEN }}
+          days_before: '7' 
+          output_format: 'raw' 
 
       - name: Print Authors' Emails
         run: |
