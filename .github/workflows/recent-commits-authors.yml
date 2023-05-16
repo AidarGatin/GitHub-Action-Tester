@@ -9,9 +9,6 @@ jobs:
   get-commits:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
       - name: Get Recent Commit Authors
         uses: AidarGatin/github-recent-commits-authors@v1.3
         id: recent-commits
