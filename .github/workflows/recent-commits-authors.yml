@@ -15,7 +15,7 @@ jobs:
         with:
           github_repository: ${{ github.repository }}
           github_token: ${{ secrets.GH_TOKEN }}
-          days_before: '7' 
+          days_before: 7
           output_format: 'raw' 
 
       - name: Print Authors' Emails
