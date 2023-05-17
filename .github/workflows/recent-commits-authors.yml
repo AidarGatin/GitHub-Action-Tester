@@ -18,7 +18,7 @@ jobs:
         with:
           github_repository: ${{ github.repository }} # default current repository 
           github_token: ${{ secrets.GH_TOKEN }} # default ''
-          days_before: '7' # default 30
+          days_before: '0' # default 30
           unique: 'false' # default 'true'
           output_format: 'list' # default 'json'
 
