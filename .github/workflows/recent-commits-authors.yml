@@ -6,18 +6,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  get-commits:
+  get-commits-author:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
       - name: Get Recent Commit Authors
-        uses: AidarGatin/github-recent-commits-authors@v1.3
-        id: recent-commits
+        uses: AidarGatin/github-recent-commits-authors@main
+        id: recent-commits-authors
         with:
-          github_repository: ${{ github.repository }}
-          github_token: ${{ secrets.GH_TOKEN }}
-          days_before: 7
-          output_format: 'raw' 
+          github_repository: ${{ github.repository }} # default current repository 
+          github_token: ${{ secrets.GH_TOKEN }} # default ''
+          days_before: '7' # default 30
+          unique: 'true' # default 'true'
+          output_format: 'json' # default 'json'
 
       - name: Print Authors' Emails
         run: |
-          echo "Authors' Emails: ${{ steps.recent-commits.outputs.emails }}"
+          echo "Authors' Emails: ${{ steps.recent-commits-authors.outputs.emails }}"
